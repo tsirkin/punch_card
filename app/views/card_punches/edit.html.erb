@@ -1,0 +1,12 @@
+<h1>Editing card_punch</h1>
+
+<% form_for(@card_punch) do |f| %>
+  <%= f.error_messages %>
+  <%= select_month %>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @card_punch %> |
+<%= link_to 'Back', card_punches_path %>

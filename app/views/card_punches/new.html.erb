@@ -1,0 +1,13 @@
+<h1>New card_punch</h1>
+
+<% form_for(@card_punch) do |f| %>
+  <%= f.error_messages %>
+  <%= f.date_select :punch_date,{:use_month_numbers =>
+  true,:discard_day => true} %>
+  <%= select_time Time.now%>
+  <p>
+    <%= f.submit 'Create' %>
+  </p>
+<% end %>
+
+<%= link_to 'Back', card_punches_path %>

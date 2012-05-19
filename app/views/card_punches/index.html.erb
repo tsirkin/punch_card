@@ -1,0 +1,28 @@
+<h1>Listing card_punches</h1>
+
+<table>
+     <%=I18n.t("date.month_names")[@punched_month.month]%>
+<% (1..month_days(@punched_month)).to_a.each do |nday|
+     week_day=(@punched_month.wday + nday - 1) % 7
+     %>
+  <tr>
+       <td>
+            <%=nday%>
+       </td>
+       <td>
+            <%=I18n.t("date.day_names")[week_day]%>
+       </td>
+  </tr>
+<% end %>
+<% @card_punches.each do |card_punch| %>
+  <tr>
+    <td><%= link_to 'Show', card_punch %></td>
+    <td><%= link_to 'Edit', edit_card_punch_path(card_punch) %></td>
+    <td><%= link_to 'Destroy', card_punch, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New card_punch', new_card_punch_path %>
